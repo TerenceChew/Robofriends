@@ -1,5 +1,5 @@
 # robofriends
-Create a project with create-react-app
+A simple project built with create-react-app
 
 To run the project:
   1. Clone this repo
