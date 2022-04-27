@@ -1,5 +1,3 @@
-import React from 'react';
-
 const SearchBox = ({ acquireInputValue }) => {
   return (
     <div className='pa2 ma2'>
