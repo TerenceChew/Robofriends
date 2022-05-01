@@ -20,12 +20,12 @@ class App extends Component {
     .then(users => this.setState({robots:users}))
   }
 
-  // state = {            // from Class Field Proposal syntax
+  // state = {            // Class Field Proposal syntax
   //   robots: [],
   //   searchField: ''
   // }
 
-  getSearchBoxValue = event => {            // from Class Field Proposal syntax
+  getSearchBoxValue = event => {            // Class Field Proposal syntax
     this.setState({
       searchField: event.target.value
     })
@@ -55,8 +55,6 @@ class App extends Component {
 }
 
 export default App;
-
-// STEPS:
 
 // detect change in SearchBox, run callback
 // in App, execute callback, update searchField
