@@ -1,5 +1,5 @@
 # robofriends
-A project built with Create React App
+A page built with Create React App
 
 To run the project:
   1. Clone this repo
