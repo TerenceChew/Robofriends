@@ -2,7 +2,7 @@
 
 A simple project built with create-react-app
 
-## To run the project:
+## To clone the app:
 
 1. Clone this repo
 2. Run `npm install`
