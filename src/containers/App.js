@@ -1,47 +1,48 @@
-import { Component } from 'react';
-import CardList from '../components/CardList';
-import SearchBox from '../components/SearchBox';
-import Scroll from '../components/Scroll';
-import ErrorBoundary from '../components/ErrorBoundary';
-import './App.css';
+import { Component } from "react";
+import CardList from "../components/CardList";
+import SearchBox from "../components/SearchBox";
+import Scroll from "../components/Scroll";
+import ErrorBoundary from "../components/ErrorBoundary";
+import "./App.css";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       robots: [],
-      searchField: ''
+      searchField: "",
     };
   }
-  
+
   componentDidMount() {
-    fetch('https://jsonplaceholder.typicode.com/users')
-    .then(response => response.json())
-    .then(users => this.setState({robots:users}))
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((response) => response.json())
+      .then((users) => this.setState({ robots: users }));
   }
 
-  // state = {            // from Class Field Proposal syntax
+  // state = { // Class Field Proposal syntax
   //   robots: [],
   //   searchField: ''
   // }
 
-  getSearchBoxValue = event => {            // from Class Field Proposal syntax
+  getSearchBoxValue = (event) => {
+    // Class Field Proposal syntax
     this.setState({
-      searchField: event.target.value
-    })
-  }
+      searchField: event.target.value,
+    });
+  };
 
-  render () {
+  render() {
     const { robots, searchField } = this.state;
-    const filteredRobot = robots.filter(robot => {
+    const filteredRobot = robots.filter((robot) => {
       return robot.name.toLowerCase().includes(searchField.toLowerCase());
-    })
+    });
 
-    return !robots.length ?
-    <h1>Loading</h1> :
-    (
-      <div className='tc'>
-        <h1 className='f1 ma4'>Robofriends</h1>
+    return !robots.length ? (
+      <h1>Loading</h1>
+    ) : (
+      <div className="tc">
+        <h1 className="f1 ma4">Robofriends</h1>
         <SearchBox acquireInputValue={this.getSearchBoxValue} />
         <hr />
         <Scroll>
@@ -55,8 +56,6 @@ class App extends Component {
 }
 
 export default App;
-
-// STEPS:
 
 // detect change in SearchBox, run callback
 // in App, execute callback, update searchField
